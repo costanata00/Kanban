@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aula 03 - <%= card.title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-100 min-h-screen">
+    <header class="bg-slate-900 text-white px-6 py-4">
+      <h1 class="text-xl font-semibold">Detalhe do cartão</h1>
+      <p class="text-slate-300 text-sm">
+        <a href="/" class="underline hover:text-white">&larr; Voltar para o quadro</a>
+      </p>
+    </header>
+
+    <main class="p-6">
+      <section class="bg-white rounded-lg shadow max-w-lg p-6">
+        <h2 class="text-lg font-semibold text-slate-800"><%= card.title %></h2>
+
+        <span class="inline-block mt-2 text-[11px] px-2 py-0.5 rounded-full <%= card.priorityBadgeClass %>">
+          <%= card.priority %>
+        </span>
+
+        <p class="mt-4 text-sm text-slate-500">
+          Coluna: <span class="font-medium text-slate-700"><%= card.columnName %></span>
+        </p>
+
+        <% if (card.description) { %>
+          <p class="mt-4 text-sm text-slate-600"><%= card.description %></p>
+        <% } else { %>
+          <p class="mt-4 text-sm text-slate-400 italic">Sem descrição</p>
+        <% } %>
+      </section>
+    </main>
+  </body>
+</html>
